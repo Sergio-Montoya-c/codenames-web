@@ -14,15 +14,15 @@ export default class QRContainer extends PureComponent {
   };
 
   render() {
-    const string = `http://192.168.0.51:3000?agent-card=${"BBBBBBBBRRRRRRRPPPPD".split('').sort(() => 0.5-Math.random()).join('')}`;
     const {isOpen} = this.state;
+    const {randomString} = this.props;
     return (
       <div className='qr-container'>
         <button onClick={this.handleShowQR}><QRImage width="25"/></button>
         { isOpen &&
           <div className='overlay'>
             <div onClick={this.handleShowQR} className="close-overlay" />
-            <QRCode value={string} size={300} />
+            <QRCode value={`http://192.168.0.51:3000?agent-card=${randomString}`} size={300} />
           </div>
         }
       </div>
