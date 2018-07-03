@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    margin-left: 25px;
+  }
+}
