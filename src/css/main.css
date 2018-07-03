@@ -15,12 +15,15 @@ h1 {
   background: url(../assets/images/table.jpg);
   background-size: cover; }
 
+.secret-agent-grid {
+  display: flex; }
+
 .header {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   align-items: center;
-  padding-top: 15px; }
+  width: 100%; }
   .header button {
     padding: 0;
     border: 0;
@@ -68,11 +71,16 @@ h1 {
     transform: scale(1) rotate(0deg); } }
 
 .layout {
-  flex: 2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 25px; }
+  flex-direction: column;
+  margin-top: 25px;
+  height: 100%; }
+  .layout .cards-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%; }
 
 .card-container {
   width: 20%;

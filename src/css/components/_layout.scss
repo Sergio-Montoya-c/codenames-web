@@ -1,7 +1,13 @@
 .layout {
-  flex: 2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   margin-top: 25px;
+  height: 100%;
+  .cards-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }
