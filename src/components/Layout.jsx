@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ImagesList from './Card/images_list';
 import getURLParam from '../utils/getURLParam';
 import Card from './Card'
-import Card from './Card';
 import {randomString} from '../utils';
 
 const generateCardsArray = randomString => {
