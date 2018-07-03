@@ -1,5 +1,5 @@
-const randomString = startingTeam => {
-  const colorsString = `BBBBBBBRRRRRRRDPPPP${startingTeam}`
+const randomString = () => {
+  const colorsString = `BBBBBBBRRRRRRRDPPPP${Math.floor(Math.random() * 2) ? 'B' : 'R'}`
                        .split('')
                        .sort(() => 0.5 - Math.random() ).join('');
   return colorsString;
