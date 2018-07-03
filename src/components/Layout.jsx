@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ImagesList from './Card/images_list';
-import Card from './Card'
+import Card from './Card';
+import {randomString} from '../utils';
 
 class Layout extends Component {
   state = {
@@ -10,6 +11,7 @@ class Layout extends Component {
           image: ImagesList[Math.floor(Math.random() * 3)],
         }
       )),
+    randomString: randomString('blue'),
   };
 
   handleRevealCard = (key) => {
