@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ImagesList from './Card/images_list';
 import getURLParam from '../utils/getURLParam';
 import Card from './Card'
+import Card from './Card';
+import {randomString} from '../utils';
 
 const generateCardsArray = randomString => {
   const fieldArray = randomString.split("");
@@ -28,7 +30,6 @@ class Layout extends Component {
 
   render () {
     const {cardsArray, randomString} = this.state;
-    console.log(getURLParam('agent-card'));
     return (
       <div className="layout">
         {cardsArray.map((card, index) => {
