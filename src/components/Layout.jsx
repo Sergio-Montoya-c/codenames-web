@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
 import ImagesList from './Card/images_list';
+import getURLParam from '../utils/getURLParam';
 import Card from './Card'
+
+const generateCardsArray = randomString => {
+  const fieldArray = randomString.split("");
+  return fieldArray.map(field => ({
+      selected: false,
+      agent: field,
+      image: ImagesList[Math.floor(Math.random() * 3)],
+    })
+  );
+};
 
 class Layout extends Component {
   state = {
-    cardsArray: Array.from(Array(20)).map(element => (
-        {
-          selected: false,
-          image: ImagesList[Math.floor(Math.random() * 3)],
-        }
-      )),
+    cardsArray: getURLParam('agent-card') ? generateCardsArray(getURLParam('agent-card')) : generateCardsArray('BBBBBBBBRRRRRRRPPPPD'),
   };
 
   handleRevealCard = (key) => {
@@ -21,13 +27,13 @@ class Layout extends Component {
   };
 
   render () {
-    const {cardsArray} = this.state;
+    const {cardsArray, randomString} = this.state;
+    console.log(getURLParam('agent-card'));
     return (
       <div className="layout">
         {cardsArray.map((card, index) => {
-          console.log(card);
-          return <Card key={index} index={index} card={card} handleRevealCard={this.handleRevealCard} />
-        }
+            return <Card key={index} index={index} card={card} handleRevealCard={this.handleRevealCard} />
+          }
         )}
       </div>
     )
