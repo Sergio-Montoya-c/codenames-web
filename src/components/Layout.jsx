@@ -11,7 +11,7 @@ class Layout extends Component {
           image: ImagesList[Math.floor(Math.random() * 3)],
         }
       )),
-    randomString: randomString('blue'),
+    randomString: randomString('B'),
   };
 
   handleRevealCard = (key) => {
